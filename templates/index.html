@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <form action="/index" method="post">
+        <h1>Shortener</h1>
+        <label for="shortener"></label>
+        <input type="text" name="shortener" id="shortener" class="shortener">
+        <input type="submit" value="Get" class="btn">
+    </form>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(15, 15, 15);
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            margin:0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width:800px;
+            flex-wrap: wrap;
+        }
+
+        .shortener {
+            border: 2px solid white;
+            background-color: rgb(15,15,15);
+            color:white;
+            width: 400px;
+            height: 40px;
+            font-size: 14pt;
+        }
+
+        .btn {
+            border: 2px solid white;
+            background-color: rgb(15,15,15);
+            border-radius: 15px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
+            width: 100px;
+            height: 20px;
+            font-size: 12pt;
+            margin-top:10px;
+        }
+    </style>
+</body>
+
+</html>
