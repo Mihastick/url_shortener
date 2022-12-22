@@ -1,6 +1,6 @@
 import sqlite3 as sql
 
-con = sql.connect('url.db')
+con = sql.connect('url.db',check_same_thread=False)
 with con:
     cur = con.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS 'users' ('name' VARCHAR, 'password' BLOB, 'email' VARCHAR PRIMARY KEY)")

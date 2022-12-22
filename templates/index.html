@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    <title>Main</title>
 </head>
 
 <body>
-    <form action="/index" method="post">
+    <header>
+        <a href="http://127.0.0.1:5000/auth" class="log">Log In</a>
+    </header>
+    <form method="post">
         <h1>Shortener</h1>
         <label for="shortener"></label>
         <input type="text" name="shortener" id="shortener" class="shortener">
         <input type="submit" value="Get" class="btn">
     </form>
+
+    <ul>
+                {% for element in urls %}
+                        <li><a href={{ element|e }}>{{ element|e }}</a></li>
+                {% endfor %}
+                
+    </ul>
 
     <style>
         * {
@@ -29,6 +39,7 @@
 
         h1 {
             color: white;
+            margin-bottom: 10px;
         }
 
         form {
@@ -40,6 +51,23 @@
             width:800px;
             flex-wrap: wrap;
         }
+        ul {
+            margin:0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top:10px;
+        }
+        ul li {
+            color:white;
+            margin:0;
+        }
+        ul li a{
+            color:white;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
         .shortener {
             border: 2px solid white;
@@ -48,6 +76,7 @@
             width: 400px;
             height: 40px;
             font-size: 14pt;
+            margin-bottom: 10px;
         }
 
         .btn {
@@ -59,9 +88,17 @@
             justify-content: center;
             color:white;
             width: 100px;
-            height: 20px;
             font-size: 12pt;
-            margin-top:10px;
+        }
+
+        .log {
+            float:left;
+            color:white;
+            text-decoration: none;
+            align-items: center;
+            border:2px solid white;
+            padding:4px;
+            cursor: pointer;
         }
     </style>
 </body>
